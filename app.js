@@ -21,14 +21,12 @@ mongoose.connect(dbURL, function(err){
 
 var db = mongoose.connection;
 
-
 app.get('/', function(req, res){
     res.send('Try using /api/photos or /api/types')
 });
 
 //In the post requests, authentication and security measures are not taken as this is a simple
 //project, however, it may be added in the future.
-
 app.get('/api/types', function(req, res){
     Type.getTypes(function(err, types){
         if(err){
@@ -138,15 +136,6 @@ app.delete('/api/photos/:_id', function(req, res){
     });
 });
 
-
-
-
-
-
-
 app.listen(3000);
 
 console.log('Starting app')
-
-
-

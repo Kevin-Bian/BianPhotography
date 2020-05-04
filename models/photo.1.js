@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 
-
 //Schema
 var photoSchema = mongoose.Schema({
     title: {type: String, required: true},
@@ -17,7 +16,6 @@ var Photo = module.exports = mongoose.model('Photo', photoSchema);
 module.exports.getPhotos = function(callback, limit){
     Photo.find(callback).limit(limit);
 }
-
 
 //Get single photo
 module.exports.getPhotoById = function(id, callback){

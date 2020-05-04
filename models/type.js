@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 
-
 //Schema
 var typeSchema = mongoose.Schema({
     name: {type: String, required: true},
@@ -8,7 +7,6 @@ var typeSchema = mongoose.Schema({
 });
 
 var Type = module.exports = mongoose.model('Type', typeSchema);
-
 
 //Add and Get
 module.exports.getTypes = function(callback, limit){
@@ -32,7 +30,6 @@ module.exports.updateType = function(id, type, options, callback){
     }
     Type.findOneAndUpdate(query, update, options, callback);
 }
-
 
 
 //Delete
